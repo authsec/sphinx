@@ -4,10 +4,18 @@ Sphinx documentation toolchain.
 
 This repository provides the Sphinx documentation toolchain with support for
 
-- latex
-- pandoc
-- markdown
-- plantuml
-- Read the docs theme
+* Full texlive latex
+* markdown
+* plantuml
+* Read the docs theme
+* Bibtex support
+* Revealjs support
 
-all wrapped in the latest ubuntu LTS release.
+# Build
+
+Check it out and build with
+
+``` bash
+# docker build -t authsec/sphinx .
+```
+
