@@ -35,6 +35,7 @@ RUN python3 -m pip install recommonmark sphinxcontrib-textstyle \
      sphinxcontrib-plantuml \
      sphinxcontrib-bibtex \
      sphinx-revealjs \
+     sphinxjp.themes.revealjs \
      Pillow \
      git+https://github.com/sphinx-doc/sphinx
 
