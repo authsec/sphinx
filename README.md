@@ -10,6 +10,7 @@ This repository provides the Sphinx documentation toolchain with support for
 * Read the docs theme
 * Bibtex support
 * Revealjs support
+* Hovercraft support
 
 # Build
 

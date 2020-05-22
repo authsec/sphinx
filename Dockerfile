@@ -36,6 +36,7 @@ RUN python3 -m pip install recommonmark sphinxcontrib-textstyle \
      sphinxcontrib-bibtex \
      sphinx-revealjs \
      sphinxjp.themes.revealjs \
+     hovercraft \
      Pillow \
      git+https://github.com/sphinx-doc/sphinx
 
