@@ -1,5 +1,5 @@
 FROM python:3.8
-LABEL maintainer="Jens Frey <jens.frey@coffeecrew.org>" Version="2020-05-24"
+LABEL maintainer="Jens Frey <jens.frey@coffeecrew.org>" Version="2020-05-27"
 
 ARG DEBIAN_FRONTEND=noninteractive
 COPY apt-fast.conf /etc/apt-fast.conf
@@ -40,6 +40,8 @@ RUN python3 -m pip install -U pip && \
      hovercraft \
      libsass \
      pysass \
+     deck2pdf \
+     rst2pdf \
      Pillow \
      git+https://github.com/sphinx-doc/sphinx
 
