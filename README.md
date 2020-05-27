@@ -66,6 +66,12 @@ The `clean` argument is not really necessary but might help in certain circumsta
 $#> docker run --rm -it -v $(pwd):/docs authsec/sphinx make clean html
 ```
 
+# SASS Compiler
+
+This is especially useful if you're planning to utilize CSS in your presentation. You can generate a CSS from a SCSS source file. You can learn all about that at the [Sass: Sass Basics](https://sass-lang.com/guide) site.
+
+The image contains `pysassc` which is a SASS compiler, and the `pysass` wrapper ([pysass · PyPI](https://pypi.org/project/pysass/)) which allows you to watch the SASS files for changes and compile them automatically when they change.
+
 # Hovercraft Presentations
 
 You can find a description of all the bells and whistles of  `hovercraft` where it says [Hovercraft! - Merging convenience and cool!](https://hovercraft.readthedocs.io/en/latest/index.html)

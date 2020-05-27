@@ -1,5 +1,5 @@
 FROM python:3.8
-LABEL maintainer="Jens Frey <jens.frey@coffeecrew.org>"
+LABEL maintainer="Jens Frey <jens.frey@coffeecrew.org>" Version="2020-05-24"
 
 ARG DEBIAN_FRONTEND=noninteractive
 COPY apt-fast.conf /etc/apt-fast.conf
@@ -21,12 +21,13 @@ RUN apt-get update && apt-get -y install aria2 && \
      lmodern \
      texlive-full \
      wget \
+     openjdk-11-jdk-headless \
      && apt-get autoremove \
      && apt-get clean \
      && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-RUN python3 -m pip install -U pip
-RUN python3 -m pip install recommonmark sphinxcontrib-textstyle \
+RUN python3 -m pip install -U pip && \
+     python3 -m pip install recommonmark sphinxcontrib-textstyle \
      sphinx_rtd_theme \
      sphinxcontrib-blockdiag \
      sphinxcontrib-actdiag \
@@ -37,6 +38,8 @@ RUN python3 -m pip install recommonmark sphinxcontrib-textstyle \
      sphinx-revealjs \
      sphinxjp.themes.revealjs \
      hovercraft \
+     libsass \
+     pysass \
      Pillow \
      git+https://github.com/sphinx-doc/sphinx
 
