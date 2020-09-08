@@ -35,6 +35,7 @@ RUN python3 -m pip install -U pip && \
      sphinxcontrib-seqdiag \
      sphinxcontrib-plantuml \
      sphinxcontrib-bibtex \
+     sphinxcontrib-tikz \
      sphinx-revealjs \
      sphinxjp.themes.revealjs \
      hovercraft \
@@ -43,7 +44,7 @@ RUN python3 -m pip install -U pip && \
      deck2pdf \
      rst2pdf \
      Pillow \
-     git+https://github.com/sphinx-doc/sphinx@v3.1.2
+     git+https://github.com/sphinx-doc/sphinx@v3.2.1
 
 # Overwrite with newest plantuml version
 WORKDIR /usr/share/plantuml/
