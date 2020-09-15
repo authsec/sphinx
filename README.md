@@ -9,6 +9,7 @@ This Docker image contains a Sphinx documentation toolchain with support for
 * [BibTeX](http://www.bibtex.org/) support
 * [reveal.js](https://revealjs.com/) support
 * [Hovercraft!](https://hovercraft.readthedocs.io/en/latest/usage.html) support
+* [Pelican](https://docs.getpelican.com/en/stable/index.html) with Markdown support
 
 # Build Docker Image
 
@@ -31,6 +32,14 @@ $#> alias asphinx='docker run --rm -it -v $(pwd):/docs authsec/sphinx'
 ```
 
 This will basically allow you to replace the long `docker run --rm -it -v $(pwd):/docs authsec/sphinx` command with the command or "alias" `asphinx`.
+
+## Sphinx on Windows
+
+If you want to use this container on Windows, you need to slightly tweak the command line to read:
+
+``` bash
+$#> docker run --rm -it -v ${PWD}:/docs authsec/sphinx
+```
 
 ## Create a new Sphinx document
 
@@ -65,6 +74,22 @@ The `clean` argument is not really necessary but might help in certain circumsta
 ``` bash
 $#> docker run --rm -it -v $(pwd):/docs authsec/sphinx make clean html
 ```
+
+# Pelican Blog
+
+You can create a new Pelican based blog with the `pelican-quickstart` command using it like:
+
+``` bash
+$#> docker run --rm -it -v $(pwd):/docs authsec/sphinx pelican-quickstart
+```
+
+If you want to preview your blog with the built in webserver on http://localhost:8000, use the following command:
+
+``` bash
+$#> docker run --rm -it -v $(pwd):/docs -p8000:8000 authsec/sphinx pelican -e BIND=0.0.0.0 --autoreload --listen
+```
+
+For further information see the [official documentation](https://docs.getpelican.com/en/stable/index.html).
 
 # SASS Compiler
 

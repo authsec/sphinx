@@ -44,6 +44,19 @@ RUN python3 -m pip install -U pip && \
      deck2pdf \
      rst2pdf \
      Pillow \
+     pelican \
+     pelican-gist \
+     typogrify \
+     markdown \
+     pelican-neighbors \
+     pelican-sitemap \
+     pelican-jinja-filters \
+     pelican-seo \
+     beautifulsoup4 \
+     pelican-plugin-linkbacks \
+     pelican-feed-filter \
+     pelican-simple-footnotes \
+     pelican-more-categories \
      git+https://github.com/sphinx-doc/sphinx@v3.2.1
 
 # Overwrite with newest plantuml version
