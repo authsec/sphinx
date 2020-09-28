@@ -91,6 +91,34 @@ $#> docker run --rm -it -v $(pwd):/docs -p8000:8000 authsec/sphinx pelican -e BI
 
 For further information see the [official documentation](https://docs.getpelican.com/en/stable/index.html).
 
+## Using pelican themes
+
+In order to use pelican themes, you have to make them accessible to the container runtime. I suggest mapping the path to `/pelican-themes` inside the container. That way you can configure the theme like `THEME="/pelican-themes/mnmlist"` for example.
+
+You can find a lot of pelican themes [on Github](https://github.com/getpelican/pelican-themes)
+
+I order to keep things separate, I'd suggest setting up, or cloning, the themes at the same level as your blog.
+
+Say you created your blog in a folder called `tmp` you want to clone the themes repository into the `tmp` folder too, so it looks like:
+
+```
+tmp
+├── blog
+└── pelican-themes
+```
+
+You can clone the themes by executing the below command inside the `tmp` folder:
+
+``` bash
+$#> git clone --recursive https://github.com/getpelican/pelican-themes ./pelican-themes
+```
+
+The following command must be executed inside your `blog` folder. It will mount the `pelican-themes` folder into the container under `/pelican-themes` where you can reference it in your config.
+
+``` bash
+$#> docker run --rm -it -v $(pwd):/docs -v $(pwd)/../pelican-themes:/pelican-themes  -p8000:8000 authsec/sphinx pelican -e BIND=0.0.0.0 --autoreload --listen
+```
+
 # SASS Compiler
 
 This is especially useful if you're planning to utilize CSS in your presentation. You can generate a CSS from a SCSS source file. You can learn all about that at the [Sass: Sass Basics](https://sass-lang.com/guide) site.
