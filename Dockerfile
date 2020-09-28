@@ -1,5 +1,5 @@
 FROM python:3.8
-LABEL maintainer="Jens Frey <jens.frey@coffeecrew.org>" Version="2020-05-27"
+LABEL maintainer="Jens Frey <jens.frey@coffeecrew.org>" Version="2020-09-28"
 
 ARG DEBIAN_FRONTEND=noninteractive
 COPY apt-fast.conf /etc/apt-fast.conf
@@ -36,6 +36,8 @@ RUN python3 -m pip install -U pip && \
      sphinxcontrib-plantuml \
      sphinxcontrib-bibtex \
      sphinxcontrib-tikz \
+     sphinxcontrib-excel-table \
+     sphinxcontrib-bibtex \
      sphinx-revealjs \
      sphinxjp.themes.revealjs \
      hovercraft \
