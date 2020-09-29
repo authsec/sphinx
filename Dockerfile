@@ -38,6 +38,7 @@ RUN python3 -m pip install -U pip && \
      sphinxcontrib-tikz \
      sphinxcontrib-excel-table \
      sphinxcontrib-bibtex \
+     sphinxcontrib-confluencebuilder \
      sphinx-revealjs \
      sphinxjp.themes.revealjs \
      hovercraft \
