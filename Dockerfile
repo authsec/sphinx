@@ -39,6 +39,7 @@ RUN python3 -m pip install -U pip && \
      sphinxcontrib-excel-table \
      sphinxcontrib-bibtex \
      sphinxcontrib-confluencebuilder \
+     sphinxcontrib-versioning \
      sphinx-revealjs \
      sphinxjp.themes.revealjs \
      hovercraft \
@@ -48,6 +49,16 @@ RUN python3 -m pip install -U pip && \
      rst2pdf \
      Pillow \
      pelican \
+     blinker \
+     cssmin \
+     ddt \
+     docutils \
+     feedgenerator \
+     gitdb2 \
+     GitPython \
+     smartypants \
+     smmap2 \
+     soupsieve \
      pelican-gist \
      typogrify \
      markdown \
@@ -60,6 +71,7 @@ RUN python3 -m pip install -U pip && \
      pelican-feed-filter \
      pelican-simple-footnotes \
      pelican-more-categories \
+     pelican-jupyter \
      git+https://github.com/sphinx-doc/sphinx@v3.2.1
 
 # Overwrite with newest plantuml version
