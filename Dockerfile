@@ -27,7 +27,9 @@ RUN apt-get update && apt-get -y install aria2 && \
      && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 RUN python3 -m pip install -U pip && \
-     python3 -m pip install recommonmark sphinxcontrib-textstyle \
+     python3 -m pip install recommonmark \
+     autopep8 \
+     sphinxcontrib-textstyle \
      sphinx_rtd_theme \
      sphinxcontrib-blockdiag \
      sphinxcontrib-actdiag \
