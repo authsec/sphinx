@@ -21,6 +21,7 @@ RUN apt-get update && apt-get -y install curl wget python3 python3-pip aria2 && 
      lmodern \
      texlive-full \
      wget \
+     qpdf \
      openjdk-11-jdk-headless \
      && apt-get autoremove \
      && apt-get clean \
