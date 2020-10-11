@@ -1,10 +1,10 @@
-FROM python:3.8
-LABEL maintainer="Jens Frey <jens.frey@coffeecrew.org>" Version="2020-09-28"
+FROM ubuntu:focal
+LABEL maintainer="Jens Frey <jens.frey@coffeecrew.org>" Version="2020-10-11"
 
 ARG DEBIAN_FRONTEND=noninteractive
 COPY apt-fast.conf /etc/apt-fast.conf
 
-RUN apt-get update && apt-get -y install aria2 && \
+RUN apt-get update && apt-get -y install curl wget python3 python3-pip aria2 && \
      # Install apt-fast
      /bin/bash -c "$(curl -sL https://git.io/vokNn)" && \
      # Find fastest mirrors and add them to apt-fast
