@@ -56,6 +56,8 @@ RUN python3 -m pip install -U pip && \
      cssmin \
      ddt \
      docutils \
+     doc8 \
+     rstcheck \
      feedgenerator \
      gitdb2 \
      GitPython \
