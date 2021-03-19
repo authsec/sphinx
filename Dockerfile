@@ -36,6 +36,7 @@ RUN python3 -m pip install -U pip && \
      sphinxcontrib-actdiag \
      sphinxcontrib-nwdiag \
      sphinxcontrib-seqdiag \
+     sphinxcontrib-mermaid \
      sphinxcontrib-plantuml \
      sphinxcontrib-bibtex \
      sphinxcontrib-tikz \
