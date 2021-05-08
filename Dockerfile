@@ -1,5 +1,5 @@
 FROM ubuntu:focal
-LABEL maintainer="Jens Frey <jens.frey@coffeecrew.org>" Version="2020-10-11"
+LABEL maintainer="Jens Frey <jens.frey@coffeecrew.org>" Version="2021-05-08"
 
 ARG DEBIAN_FRONTEND=noninteractive
 COPY apt-fast.conf /etc/apt-fast.conf
@@ -78,7 +78,8 @@ RUN python3 -m pip install -U pip && \
      pelican-simple-footnotes \
      pelican-more-categories \
      pelican-jupyter \
-     git+https://github.com/sphinx-doc/sphinx@v3.2.1
+     hieroglyph \
+     git+https://github.com/sphinx-doc/sphinx@v3.5.4
 
 # Overwrite with newest plantuml version
 WORKDIR /usr/share/plantuml/
