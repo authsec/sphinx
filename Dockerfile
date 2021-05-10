@@ -79,6 +79,8 @@ RUN python3 -m pip install -U pip && \
      pelican-more-categories \
      pelican-jupyter \
      hieroglyph \
+     jupyter-book \
+     jupyterbook-latex \
      git+https://github.com/sphinx-doc/sphinx@v3.5.4
 
 # Overwrite with newest plantuml version
