@@ -10,6 +10,8 @@ This Docker image contains a Sphinx documentation toolchain with support for
 * [reveal.js](https://revealjs.com/) support
 * [Hovercraft!](https://hovercraft.readthedocs.io/en/latest/usage.html) support
 * [Pelican](https://docs.getpelican.com/en/stable/index.html) with Markdown support
+* [Hieroglyph](https://hieroglyph.readthedocs.io/en/latest/index.html) support
+* [Jupyter Book](https://jupyterbook.org/intro.html) support
 
 # Build Docker Image
 
