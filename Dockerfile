@@ -28,8 +28,9 @@ RUN apt-get update && apt-get -y install curl wget python3 python3-pip aria2 && 
      && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 RUN python3 -m pip install -U pip && \
-     python3 -m pip install recommonmark \
+     python3 -m pip install --use-deprecated=legacy-resolver recommonmark \
      autopep8 \
+     bibulous \
      sphinxcontrib-textstyle \
      sphinx_rtd_theme \
      sphinxcontrib-blockdiag \
@@ -39,6 +40,8 @@ RUN python3 -m pip install -U pip && \
      sphinxcontrib-mermaid \
      sphinxcontrib-plantuml \
      sphinxcontrib-bibtex \
+     pybtex \
+     pybtex-apa-style \
      sphinxcontrib-tikz \
      sphinxcontrib-excel-table \
      sphinxcontrib-bibtex \
@@ -81,7 +84,7 @@ RUN python3 -m pip install -U pip && \
      hieroglyph \
      jupyter-book \
      jupyterbook-latex \
-     git+https://github.com/sphinx-doc/sphinx@v3.5.4
+     git+https://github.com/sphinx-doc/sphinx@v4.0.2
 
 # Overwrite with newest plantuml version
 WORKDIR /usr/share/plantuml/
