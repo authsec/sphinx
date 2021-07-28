@@ -1,5 +1,5 @@
 FROM ubuntu:focal
-LABEL maintainer="Jens Frey <jens.frey@coffeecrew.org>" Version="2021-05-08"
+LABEL maintainer="Jens Frey <jens.frey@coffeecrew.org>" Version="2021-07-28"
 
 ARG DEBIAN_FRONTEND=noninteractive
 COPY apt-fast.conf /etc/apt-fast.conf
