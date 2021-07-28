@@ -13,6 +13,7 @@ This Docker image contains a Sphinx documentation toolchain with support for
 * [Hieroglyph](https://hieroglyph.readthedocs.io/en/latest/index.html) support
 * [Jupyter Book](https://jupyterbook.org/intro.html) support
 * [Excel Table Plus](https://pypi.org/project/sphinxcontrib-excel-table-plus/) support
+* [Exceltable](https://pythonhosted.org/sphinxcontrib-exceltable/) support
 
 # Build Docker Image
 

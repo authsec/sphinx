@@ -45,6 +45,7 @@ RUN python3 -m pip install -U pip && \
      sphinxcontrib-tikz \
      sphinxcontrib-excel-table \
      sphinxcontrib-excel-table-plus \
+     sphinxcontrib-exceltable \
      sphinxcontrib-bibtex \
      sphinxcontrib-confluencebuilder \
      sphinxcontrib-versioning \
