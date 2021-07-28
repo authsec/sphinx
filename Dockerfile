@@ -44,6 +44,7 @@ RUN python3 -m pip install -U pip && \
      pybtex-apa-style \
      sphinxcontrib-tikz \
      sphinxcontrib-excel-table \
+     sphinxcontrib-excel-table-plus \
      sphinxcontrib-bibtex \
      sphinxcontrib-confluencebuilder \
      sphinxcontrib-versioning \

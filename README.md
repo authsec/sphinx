@@ -12,6 +12,7 @@ This Docker image contains a Sphinx documentation toolchain with support for
 * [Pelican](https://docs.getpelican.com/en/stable/index.html) with Markdown support
 * [Hieroglyph](https://hieroglyph.readthedocs.io/en/latest/index.html) support
 * [Jupyter Book](https://jupyterbook.org/intro.html) support
+* [Excel Table Plus](https://pypi.org/project/sphinxcontrib-excel-table-plus/) support
 
 # Build Docker Image
 
