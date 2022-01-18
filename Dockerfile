@@ -4,7 +4,7 @@ LABEL maintainer="Jens Frey <jens.frey@coffeecrew.org>" Version="2022-01-18"
 ARG DEBIAN_FRONTEND=noninteractive
 COPY apt-fast.conf /etc/apt-fast.conf
 
-RUN apt-get update && apt-get -y install curl wget python3 python3-pip aria2 && \
+RUN apt-get update && apt-get -y install ca-certificates curl wget python3 python3-pip aria2 && \
      # Install apt-fast
      /bin/bash -c "$(curl -sL https://git.io/vokNn)" && \
      # Find fastest mirrors and add them to apt-fast
