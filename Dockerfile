@@ -1,5 +1,5 @@
 FROM ubuntu:focal
-LABEL maintainer="Jens Frey <jens.frey@coffeecrew.org>" Version="2021-07-28"
+LABEL maintainer="Jens Frey <jens.frey@coffeecrew.org>" Version="2022-01-18"
 
 ARG DEBIAN_FRONTEND=noninteractive
 COPY apt-fast.conf /etc/apt-fast.conf
@@ -86,7 +86,7 @@ RUN python3 -m pip install -U pip && \
      hieroglyph \
      jupyter-book \
      jupyterbook-latex \
-     git+https://github.com/sphinx-doc/sphinx@v4.1.2
+     git+https://github.com/sphinx-doc/sphinx@v4.4.0
 
 # Overwrite with newest plantuml version
 WORKDIR /usr/share/plantuml/
