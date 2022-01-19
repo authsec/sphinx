@@ -6,12 +6,12 @@ COPY apt-fast.conf /etc/apt-fast.conf
 
 RUN apt-get update && apt-get -y install curl wget python3 python3-pip aria2 && \
      # Install apt-fast
-     /bin/bash -c "$(curl -sL https://git.io/vokNn)" && \
+     #/bin/bash -c "$(curl -sL https://git.io/vokNn)" && \
      # Find fastest mirrors and add them to apt-fast
-     python3 -m pip install -U pip apt-smart && \
-     echo "MIRRORS=(' $(apt-smart -l | tr '\n' ',') ')" >> /etc/apt-fast.conf && \
+     #python3 -m pip install -U pip apt-smart && \
+     #echo "MIRRORS=(' $(apt-smart -l | tr '\n' ',') ')" >> /etc/apt-fast.conf && \
      # We have apt-fast now you can replace this with apt-get if apt-fast breaks
-     apt-fast install -y \
+     #apt-fast install -y \
      graphviz \
      imagemagick \
      make \
