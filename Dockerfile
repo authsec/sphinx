@@ -1,10 +1,10 @@
 FROM ubuntu:jammy
-LABEL maintainer="Jens Frey <jens.frey@coffeecrew.org>" Version="2022-06-11"
+LABEL maintainer="Jens Frey <jens.frey@coffeecrew.org>" Version="2022-06-22"
 
 ARG DEBIAN_FRONTEND=noninteractive
 COPY apt-fast.conf /etc/apt-fast.conf
 
-RUN apt-get update && apt-get -y install curl wget python3 python3-pip aria2 \ 
+RUN apt-get update && apt-get -y upgrade && apt-get -y install curl wget python3 python3-pip aria2 \ 
      # && \
      # Install apt-fast
      #/bin/bash -c "$(curl -sL https://git.io/vokNn)" && \
@@ -87,7 +87,7 @@ RUN python3 -m pip install -U pip && \
      hieroglyph \
      jupyter-book \
      jupyterbook-latex \
-     git+https://github.com/sphinx-doc/sphinx@v5.0.1
+     git+https://github.com/sphinx-doc/sphinx@v5.0.2
 
 # Overwrite with newest plantuml version
 WORKDIR /usr/share/plantuml/
