@@ -1,10 +1,12 @@
-FROM ubuntu:jammy
-LABEL maintainer="Jens Frey <jens.frey@coffeecrew.org>" Version="2022-06-22"
+FROM ubuntu:kinetic as build
+LABEL maintainer="Jens Frey <jens.frey@coffeecrew.org>" Version="2022-06-23"
 
 ARG DEBIAN_FRONTEND=noninteractive
 COPY apt-fast.conf /etc/apt-fast.conf
 
-RUN apt-get update && apt-get -y upgrade && apt-get -y install curl wget python3 python3-pip aria2 \ 
+RUN apt-get update \
+    && apt-get -y upgrade \
+    && apt-get -y install curl wget python3 python3-pip aria2 \ 
      # && \
      # Install apt-fast
      #/bin/bash -c "$(curl -sL https://git.io/vokNn)" && \
@@ -95,5 +97,8 @@ RUN rm -rf plantuml.jar && \
      wget "https://sourceforge.net/projects/plantuml/files/plantuml.jar" --no-check-certificate && \
      mkdir /usr/local/plantuml/ && ln -sf /usr/share/plantuml/plantuml.jar /usr/local/plantuml/plantuml.jar
 
+FROM scratch
+
+COPY --from=build / /
 WORKDIR /docs
 CMD ["make", "latexpdf"]
