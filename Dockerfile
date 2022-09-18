@@ -1,5 +1,5 @@
 FROM ubuntu:kinetic as build
-LABEL maintainer="Jens Frey <jens.frey@coffeecrew.org>" Version="2022-06-23"
+LABEL maintainer="Jens Frey <jens.frey@coffeecrew.org>" Version="2022-09-18"
 
 ARG DEBIAN_FRONTEND=noninteractive
 COPY apt-fast.conf /etc/apt-fast.conf
