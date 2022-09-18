@@ -25,7 +25,7 @@ RUN apt-get update \
      texlive-full \
      wget \
      qpdf \
-     openjdk-11-jdk-headless \
+     openjdk-17-jdk-headless \
      && apt-get autoremove \
      && apt-get clean \
      && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
