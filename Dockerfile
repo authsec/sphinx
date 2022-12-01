@@ -89,7 +89,8 @@ RUN python3 -m pip install -U pip && \
      hieroglyph \
      jupyter-book \
      jupyterbook-latex \
-     git+https://github.com/sphinx-doc/sphinx@v5.0.2
+     diagrams \
+     git+https://github.com/sphinx-doc/sphinx@v5.3.0
 
 # Overwrite with newest plantuml version
 WORKDIR /usr/share/plantuml/
