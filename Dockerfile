@@ -90,6 +90,11 @@ RUN python3 -m pip install -U pip && \
      jupyter-book \
      jupyterbook-latex \
      diagrams \
+     tabulate \
+     pandas \
+     dask \
+     pyarrow \
+     seaborn \
      git+https://github.com/sphinx-doc/sphinx@v5.3.0
 
 # Overwrite with newest plantuml version
