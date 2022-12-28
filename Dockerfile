@@ -26,6 +26,7 @@ RUN apt-get update \
      wget \
      qpdf \
      openjdk-17-jdk-headless \
+     pandoc \
      && apt-get autoremove \
      && apt-get clean \
      && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
