@@ -27,12 +27,6 @@ RUN apt-get update \
      qpdf \
      openjdk-17-jdk-headless \
      pandoc \
-     && apt-get autoremove \
-     && apt-get clean \
-     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
-
-RUN apt-get -y update && \ 
-     apt-get -y install \
      python3-full \
      python3-sphinx-rtd-theme \
      python3-sphinxcontrib.plantuml \
@@ -78,7 +72,10 @@ RUN apt-get -y update && \
      rstcheck \
      tikzit \
      qtikz \
-     pipx
+     pipx \
+     && apt-get autoremove \
+     && apt-get clean \
+     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 RUN python3 -m pip install --break-system-packages --user \
      hieroglyph \
