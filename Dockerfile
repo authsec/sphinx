@@ -1,5 +1,5 @@
-FROM ubuntu:kinetic as build
-LABEL maintainer="Jens Frey <jens.frey@coffeecrew.org>" Version="2022-09-18"
+FROM ubuntu:lunar as build
+LABEL maintainer="Jens Frey <jens.frey@coffeecrew.org>" Version="2023-06-18"
 
 ARG DEBIAN_FRONTEND=noninteractive
 COPY apt-fast.conf /etc/apt-fast.conf
@@ -31,26 +31,29 @@ RUN apt-get update \
      && apt-get clean \
      && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-RUN python3 -m pip install -U pip && \
-     python3 -m pip install --use-deprecated=legacy-resolver recommonmark \
+RUN apt-get -y update && \ 
+     apt-get -y install \
+     python3-sphinx-rtd-theme \
+     python3-sphinxcontrib.plantuml \
+     python3-sphinxcontrib.nwdiag \
+     python3-sphinxcontrib.actdiag \
+     python3-sphinxcontrib.blockdiag \
+     python3-sphinxcontrib.seqdiag \
+     python3-sphinxcontrib-mermaid \
+     python3-sphinxcontrib.bibtex 
+
+
+RUN python3 -m pip install --break-system-packages -U pip && \
+     python3 -m pip install --break-system-packages recommonmark \
      autopep8 \
      bibulous \
      sphinxcontrib-textstyle \
-     sphinx_rtd_theme \
-     sphinxcontrib-blockdiag \
-     sphinxcontrib-actdiag \
-     sphinxcontrib-nwdiag \
-     sphinxcontrib-seqdiag \
-     sphinxcontrib-mermaid \
-     sphinxcontrib-plantuml \
-     sphinxcontrib-bibtex \
      pybtex \
      pybtex-apa-style \
      sphinxcontrib-tikz \
      sphinxcontrib-excel-table \
      sphinxcontrib-excel-table-plus \
      sphinxcontrib-exceltable \
-     sphinxcontrib-bibtex \
      sphinxcontrib-confluencebuilder \
      sphinxcontrib-versioning \
      sphinx-revealjs \
@@ -96,7 +99,7 @@ RUN python3 -m pip install -U pip && \
      dask \
      pyarrow \
      seaborn \
-     git+https://github.com/sphinx-doc/sphinx@v5.3.0
+     git+https://github.com/sphinx-doc/sphinx@v7.0.0
 
 # Overwrite with newest plantuml version
 WORKDIR /usr/share/plantuml/
