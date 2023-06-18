@@ -33,6 +33,7 @@ RUN apt-get update \
 
 RUN apt-get -y update && \ 
      apt-get -y install \
+     python3-full \
      python3-sphinx-rtd-theme \
      python3-sphinxcontrib.plantuml \
      python3-sphinxcontrib.nwdiag \
@@ -40,72 +41,79 @@ RUN apt-get -y update && \
      python3-sphinxcontrib.blockdiag \
      python3-sphinxcontrib.seqdiag \
      python3-sphinxcontrib-mermaid \
-     python3-sphinxcontrib.bibtex 
+     python3-sphinxcontrib.bibtex \
+     python3-libsass \
+     python3-rcssmin \
+     python3-arrow \
+     python3-autopep8 \
+     python3-feedgenerator \
+     python3-pybtex \
+     python3-doc8 \
+     python3-geopandas \
+     python3-pandas \
+     python3-dask \
+     python3-dask-sphinx-theme \
+     python3-sphinx \
+     python3-docutils \ 
+     python3-sphinx-rst-builder \
+     python3-ddt \ 
+     python3-blinker \
+     python3-willow \
+     python3-rstcheck \
+     python3-jupyter* \
+     python3-seaborn \
+     python3-markdown2 \
+     python3-typogrify \
+     python3-diagrams \
+     python3-tabulate \
+     python3-typeshed \
+     python3-smmap \
+     python3-recommonmark \
+     python3-soupsieve \
+     python3-smartypants \
+     pelican \
+     hovercraft \
+     pysassc \
+     rst2pdf \ 
+     rstcheck \
+     tikzit \
+     qtikz \
+     pipx
 
-
-RUN python3 -m pip install --break-system-packages -U pip && \
-     python3 -m pip install --break-system-packages recommonmark \
-     autopep8 \
+RUN python3 -m pip install --break-system-packages --user \
+     hieroglyph \
      bibulous \
+     sphinx-revealjs \
+     sphinxjp.themes.revealjs \
+     deck2pdf \
+     gitdb2 \
+     jupyter-book \
+     jupyterbook-latex \
+     GitPython \
+     pelican-gist \
+     pelican-neighbors \
+     pelican-sitemap \
+     pelican-jinja-filters \
+     pelican-seo \
+     pelican-plugin-linkbacks \
+     pelican-feed-filter \
+     pelican-simple-footnotes \
+     pelican-more-categories \
+     pelican-jupyter \
      sphinxcontrib-textstyle \
-     pybtex \
      pybtex-apa-style \
      sphinxcontrib-tikz \
      sphinxcontrib-excel-table \
      sphinxcontrib-excel-table-plus \
      sphinxcontrib-exceltable \
      sphinxcontrib-confluencebuilder \
-     sphinxcontrib-versioning \
-     sphinx-revealjs \
-     sphinxjp.themes.revealjs \
-     hovercraft \
-     libsass \
-     pysass \
-     deck2pdf \
-     rst2pdf \
-     Pillow \
-     pelican \
-     blinker \
-     cssmin \
-     ddt \
-     docutils \
-     doc8 \
-     rstcheck \
-     feedgenerator \
-     gitdb2 \
-     GitPython \
-     smartypants \
-     smmap2 \
-     soupsieve \
-     pelican-gist \
-     typogrify \
-     markdown \
-     pelican-neighbors \
-     pelican-sitemap \
-     pelican-jinja-filters \
-     pelican-seo \
-     beautifulsoup4 \
-     pelican-plugin-linkbacks \
-     pelican-feed-filter \
-     pelican-simple-footnotes \
-     pelican-more-categories \
-     pelican-jupyter \
-     hieroglyph \
-     jupyter-book \
-     jupyterbook-latex \
-     diagrams \
-     tabulate \
-     pandas \
-     dask \
-     pyarrow \
-     seaborn \
-     git+https://github.com/sphinx-doc/sphinx@v7.0.0
+     sphinxcontrib-versioning 
 
 # Overwrite with newest plantuml version
 WORKDIR /usr/share/plantuml/
 RUN rm -rf plantuml.jar && \
      wget "https://sourceforge.net/projects/plantuml/files/plantuml.jar" --no-check-certificate && \
-     mkdir /usr/local/plantuml/ && ln -sf /usr/share/plantuml/plantuml.jar /usr/local/plantuml/plantuml.jar
+     mkdir -p /usr/local/plantuml/ && ln -sf /usr/share/plantuml/plantuml.jar /usr/local/plantuml/plantuml.jar
 
 FROM scratch
 
