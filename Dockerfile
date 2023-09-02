@@ -1,5 +1,5 @@
 FROM ubuntu:lunar as build
-LABEL maintainer="Jens Frey <jens.frey@coffeecrew.org>" Version="2023-06-18"
+LABEL maintainer="Jens Frey <jens.frey@coffeecrew.org>" Version="2023-09-01"
 
 ARG DEBIAN_FRONTEND=noninteractive
 COPY apt-fast.conf /etc/apt-fast.conf
@@ -65,6 +65,7 @@ RUN apt-get update \
      python3-recommonmark \
      python3-soupsieve \
      python3-smartypants \
+     python3-plotly \
      pelican \
      hovercraft \
      pysassc \
@@ -104,7 +105,8 @@ RUN python3 -m pip install --break-system-packages --user \
      sphinxcontrib-excel-table-plus \
      sphinxcontrib-exceltable \
      sphinxcontrib-confluencebuilder \
-     sphinxcontrib-versioning 
+     sphinxcontrib-versioning \
+     sphinx-exec-code
 
 # Overwrite with newest plantuml version
 WORKDIR /usr/share/plantuml/
