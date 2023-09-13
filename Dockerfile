@@ -1,5 +1,5 @@
 FROM ubuntu:lunar as build
-LABEL maintainer="Jens Frey <jens.frey@coffeecrew.org>" Version="2023-09-01"
+LABEL maintainer="Jens Frey <jens.frey@coffeecrew.org>" Version="2023-09-13"
 
 ARG DEBIAN_FRONTEND=noninteractive
 COPY apt-fast.conf /etc/apt-fast.conf
@@ -106,7 +106,8 @@ RUN python3 -m pip install --break-system-packages --user \
      sphinxcontrib-exceltable \
      sphinxcontrib-confluencebuilder \
      sphinxcontrib-versioning \
-     sphinx-exec-code
+     sphinx-exec-directive \
+     sphinx_diagrams
 
 # Overwrite with newest plantuml version
 WORKDIR /usr/share/plantuml/
